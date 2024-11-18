@@ -21,6 +21,7 @@ const Hello: React.FC = () => {
 
   return (
     <div>
+      <h1>Welcome to the react from azure static webapp!</h1>
       <h1>{message}</h1>
     </div>
   );
