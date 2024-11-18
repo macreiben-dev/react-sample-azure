@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 const Hello: React.FC = () => {
   const [message, setMessage] = useState<string>("");
@@ -8,10 +7,6 @@ const Hello: React.FC = () => {
     const fetchData = async () => {
       console.log("fetching data");
       try {
-        // const response = await axios.get(
-        //   "https://demo-api-node-raccoon-gygyh7dwbnhpadgy.westeurope-01.azurewebsites.net/hello"
-        // );
-
         const current = await fetch(
           "https://demo-api-node-raccoon-gygyh7dwbnhpadgy.westeurope-01.azurewebsites.net/hello"
         );
