@@ -6,11 +6,21 @@ const Hello: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log("fetching data");
       try {
-        const response = await axios.get(
+        // const response = await axios.get(
+        //   "https://demo-api-node-raccoon-gygyh7dwbnhpadgy.westeurope-01.azurewebsites.net/hello"
+        // );
+
+        const current = await fetch(
           "https://demo-api-node-raccoon-gygyh7dwbnhpadgy.westeurope-01.azurewebsites.net/hello"
         );
-        setMessage(response.data.message);
+
+        const data = await current.text();
+
+        console.info("data", data);
+
+        setMessage(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
